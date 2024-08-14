@@ -10,9 +10,11 @@ source:
   sha256: cd80dae9a8f6c4c2061f79084468ea6e04c372e932e3712a165119417960e14e
 
 build:
-  number: 0
+  number: 1
   ignore_run_exports:
-    - libstdcxx-ng
+    # don't ignore all run-exports from {{ compiler('cxx') }}, we need libgcc
+    - libstdcxx     # [linux]
+    - libstdcxx-ng  # [linux]
 
 requirements:
   build:
