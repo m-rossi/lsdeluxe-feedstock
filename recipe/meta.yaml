@@ -10,17 +10,19 @@ source:
   sha256: cd80dae9a8f6c4c2061f79084468ea6e04c372e932e3712a165119417960e14e
 
 build:
-  number: 0
-  ignore_run_exports:
-    - libstdcxx-ng
+  number: 1
+  ignore_run_exports_from:
+    # we want to ignore libstdcxx, but not libgcc; the latter also comes in through
+    # compiler('c'), and conda keeps that despite ignoring the cxx run-exports
+    - {{ compiler('cxx') }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}  # [linux]
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
-  run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
