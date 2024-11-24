@@ -24,6 +24,10 @@ requirements:
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
 
+outputs:
+  - name: {{ name }}
+  - name: lsd-rs
+
 test:
   commands:
     - lsd --help
