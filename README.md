@@ -3,13 +3,13 @@ About lsdeluxe-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lsdeluxe-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/Peltoche/lsd
+Home: https://github.com/lsd-rs/lsd
 
 Package license: Apache-2.0
 
 Summary: The next gen ls command
 
-Development: https://github.com/Peltoche/lsd
+Development: https://github.com/lsd-rs/lsd
 
 Current build status
 ====================
