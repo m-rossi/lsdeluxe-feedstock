@@ -24,13 +24,13 @@ requirements:
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
 
-outputs:
-  - name: {{ name }}
-  - name: lsd-rs
-
 test:
   commands:
     - lsd --help
+
+outputs:
+  - name: {{ name }}
+  - name: lsd-rs
 
 about:
   home: https://github.com/lsd-rs/lsd
