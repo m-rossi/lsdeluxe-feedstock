@@ -30,6 +30,8 @@ outputs:
       commands:
         - lsd --help
   - name: lsd-rs
+    build:
+      noarch: generic
     requirements:
       run:
         - {{ pin_subpackage(name, exact=True) }}
